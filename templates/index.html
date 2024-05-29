@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Swap App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Face Swap App</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="file">Upload Image:</label>
+                <input type="file" name="file" id="file" required>
+            </div>
+            <div>
+                <button type="submit">Swap Face</button>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
