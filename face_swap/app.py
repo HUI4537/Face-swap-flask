@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
-from face_swap import face_swap
+# from face_swap import face_swap
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
@@ -36,12 +36,12 @@ def index():
 
             # Perform face swap
             output_paths = [os.path.join(app.config['RESULT_FOLDER'], f'result_{i}.jpg') for i in range(4)]
-            try:
-                face_swap(filepath, predefined_images, output_paths)
-            except Exception as e:
-                print("fuck")
-                print(f"Error during face swap: {e}")
-                return "Face swap failed", 500
+            # try:
+            #     # face_swap(filepath, predefined_images, output_paths)
+            # except Exception as e:
+            #     print("fuck")
+            #     print(f"Error during face swap: {e}")
+            #     return "Face swap failed", 500
 
             print(f"Face swap completed successfully, saved results to {output_paths}")
             return render_template('result.html', filenames=[os.path.basename(p) for p in output_paths])
