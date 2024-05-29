@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Swap App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Face Swap App</h1>
+    <video id="video" autoplay></video>
+    <button id="captureButton">사진 찍기</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+   
     <div class="container">
-        <h1>Face Swap App</h1>
+        
         <form action="/" method="post" enctype="multipart/form-data">
             <div>
                 <label for="file">Upload Image:</label>
@@ -19,6 +24,15 @@
             </div>
         </form>
     </div>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+   
+   
+    <div class="container"> 
+        <h1>숫자 입력 예제</h1>
+        <input type="number" id="numberInput" placeholder="숫자를 입력하세요">
+        <button id="submitButton">제출</button>
+        <p id="result"></p>
+    </div>
+    <!-- 스크립트 파일을 로드합니다. -->
+    <script src="java_script.js"></script>
 </body>
 </html>
